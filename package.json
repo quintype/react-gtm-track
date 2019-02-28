@@ -1,0 +1,22 @@
+{
+  "name": "react-gtm-track",
+  "version": "1.0.0",
+  "description": "Make sending data to GTM datalayer easy by enclosing your pages within this component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintype/react-gtm-track.git"
+  },
+  "author": "Ekanshi Agrawal (ekanshi001@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quintype/react-gtm-track/issues"
+  },
+  "homepage": "https://github.com/quintype/react-gtm-track#readme",
+  "dependencies": {
+    "react": "^16.8.3"
+  }
+}
