@@ -1,29 +1,24 @@
-# GTM track
+# React GTM track
 
-Enclose any part of your app within this component to send pageview automatically and track clicks and form submits.
+This is a react component to help ease the process of sending events and variables to Google Tag Manager via datalayer.
 
-## Initial Setup
+**NOTE:** You need to add global datalayer variable and GTM container before using this. This component **does not** add any script on its own.
+[Refer google's official documentation to know how to do that.](https://developers.google.com/tag-manager/devguide#datalayer)
 
-* Add the following script in the head of your app's html to load it as soon as possible:
+## Installation
+
+You can install using npm:
+
 ```
-<script>if(!window.dataLayer)window.dataLayer = [];</script>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer',`${GTM-CONTAINER-ID}`);</script>
-```
-
-* Add the following script in the body:
-```
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=`${GTM-CONTAINER-ID}`
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+npm i @quintype/react-gtm-track
 ```
 
 
-## Using GTM Component
+## Usage
 
-* Enclose the component to keep track of inside `GtmTrackEvents` component
-* Pass a unique identifier, gtmCommonFields (initial object with common values for all events on the page)
-* For a comp to track within this, put an attribute `gtmtrack` and `data-gtmdata`(== stringified customFields Object)
-* For tracking form submit, put an attribute `gtmtracksubmit`
+* Enclose the page inside `GtmTrackEvents` component to keep track of events on it.
+* Pass a unique identifier, gtmCommonFields (initial object with common values for all events on the page).
+* It will send pageview event when the page loads by default.
+* To track clicks within this, put an attribute `gtmtrack` and send custom data specific to that click by `data-gtmdata`(== stringified customFields Object).
+The component will take care of combining this data with the common fields.
+* To track form submit, put an attribute `gtmtracksubmit`
