@@ -25,7 +25,7 @@ export default class GtmTrackEvents extends React.Component {
   }
 
   trackClicks () {
-    const commonFields = this.props.gtmCommonFields;
+    const commonFields = this.props.gtmCommonFields || {};
     const id = this.props.identifier;
     window.onload = function () {
       const elements = document.querySelectorAll(`#${id} [gtmtrack]`);
