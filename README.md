@@ -10,7 +10,7 @@ This is a react component to help ease the process of sending events and variabl
 You can install using npm:
 
 ```
-npm i @quintype/react-gtm-track
+npm i react-gtm-track
 ```
 
 
