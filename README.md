@@ -17,7 +17,7 @@ npm i @quintype/react-gtm-track
 ## Usage
 
 * Enclose the page inside `GtmTrackEvents` component to keep track of events on it.
-* Pass a unique identifier, gtmCommonFields (initial object with common values for all events on the page).
+* Pass a unique identifier, gtmCommonFields (optional initial object with common values for all events on the page).
 * It will send pageview event when the page loads by default.
 * To track clicks within this, put an attribute `gtmtrack` and send custom data specific to that click by `data-gtmdata`(== stringified customFields Object).
 The component will take care of combining this data with the common fields.
