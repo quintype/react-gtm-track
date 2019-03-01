@@ -18,5 +18,11 @@
   "homepage": "https://github.com/quintype/react-gtm-track#readme",
   "dependencies": {
     "react": "^16.8.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0"
   }
 }
