@@ -1,3 +1,1 @@
-import GtmTrackEvents from './GtmTrackEvents';
-
-export default GtmTrackEvents;
+export * from './GtmTrackEvents';

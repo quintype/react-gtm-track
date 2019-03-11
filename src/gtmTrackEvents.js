@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class GtmTrackEvents extends React.Component {
+export class GtmTrackEvents extends React.Component {
   constructor (props) {
     super(props);
     this.sendPageview = this.sendPageview.bind(this);
