@@ -1,6 +1,6 @@
 {
   "name": "react-gtm-track",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Make sending data to GTM datalayer easy by enclosing your pages within this component",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
