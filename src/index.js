@@ -40,7 +40,7 @@ export default class GtmTrackEvents extends React.Component {
 
   trackClicks () {
     const id = this.props.identifier;
-    window.onload = function () {
+    window.onload = () => {
       const elements = document.querySelectorAll(`#${id} [gtmtrack]`);
       elements.forEach(element => {
         element.addEventListener('click', this.onElementClick);
