@@ -18,18 +18,6 @@ export default class GtmTrackEvents extends React.Component {
     this.trackClicks();
   }
 
-  componentWillUnmount () {
-    const id = this.props.identifier;
-    const elements = document.querySelectorAll(`#${id} [gtmtrack]`);
-    elements.forEach(element => {
-      element.removeEventListener('click', this.onElementClick);
-    });
-    const formElements = document.querySelectorAll(`#${id} [gtmtracksubmit]`);
-    formElements.forEach(element => {
-      element.removeEventListener('submit', this.onFormElementClick);
-    });
-  }
-
   sendPageview () {
     window.dataLayer.push({
       event: 'pageview',
@@ -43,24 +31,24 @@ export default class GtmTrackEvents extends React.Component {
     window.onload = () => {
       const elements = document.querySelectorAll(`#${id} [gtmtrack]`);
       elements.forEach(element => {
-        element.addEventListener('click', this.onElementClick);
+        element.addEventListener('click', () => this.onElementClick(element));
       });
       const formElements = document.querySelectorAll(`#${id} [gtmtracksubmit]`);
       formElements.forEach(element => {
-        element.addEventListener('submit', this.onFormElementClick);
+        element.addEventListener('submit', () => this.onFormElementClick(element));
       });
     };
   }
 
-  onElementClick (event) {
+  onElementClick (element) {
     const commonFields = this.props.gtmCommonFields || {};
-    const customFields = JSON.parse(event.target.dataset.gtmdata);
+    const customFields = JSON.parse(element.dataset.gtmdata);
     window.dataLayer.push(Object.assign({}, commonFields, customFields));
   }
 
-  onFormElementClick (event) {
+  onFormElementClick (element) {
     const commonFields = this.props.gtmCommonFields || {};
-    const customFields = JSON.parse(event.target.dataset.gtmdata);
+    const customFields = JSON.parse(element.dataset.gtmdata);
     window.dataLayer.push(Object.assign({}, commonFields, customFields));
   }
 
